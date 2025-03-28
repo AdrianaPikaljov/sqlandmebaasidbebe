@@ -4,7 +4,6 @@
 --3a. Tee Git commit iga SQL lause kohta.
 --4. pane tabelite screen'id ja/või SQL tulemused readme faili
 --5. Moodlesse lisa oma repo public link
-
 -- db loomine
 create database Tarpv24
 
@@ -18,6 +17,7 @@ create table Gender
 Id int NOT NULL primary key,
 Gender nvarchar(10) not null
 )
+
 create table Person
 (
 Id int not null primary key,
@@ -31,12 +31,13 @@ insert into Gender (Id, Gender)
 values (1, 'Female')
 insert into Gender (Id, Gender)
 values (2, 'Male')
+select * from Gender 
 
---- ?
+--- uue veeru lisamine tabelisse Person
 alter table Person add constraint tblPerson_GenderId_FK
 foreign key (GenderId) references Gender(Id)
 
--- ?
+-- andmete lisamine tabelisse Person
 insert into Person (Id, Name, Email, GenderId)
 values (1, 'Supermees', 's@s.com', 2)
 insert into Person (Id, Name, Email, GenderId)
@@ -55,11 +56,11 @@ values (7, 'Spiderman', 'spider@spiderman.com', 2)
 -- vaatame tabeli andmeid
 select * from Person
 
---- ?
+-- genderID veeru kustutamine tabelist person
 alter table Person
 drop constraint tblPerson_GenderId_FK
 
--- ?
+-- lisame andmed tabelisse Gender
 insert into Gender (Id, Gender)
 values (3, 'Unknown')
 -- lisame võõrvõtme uuesti
