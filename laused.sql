@@ -4,6 +4,7 @@
 --3a. Tee Git commit iga SQL lause kohta.
 --4. pane tabelite screen'id ja/või SQL tulemused readme faili
 --5. Moodlesse lisa oma repo public link
+
 -- db loomine
 create database Tarpv24
 
@@ -91,10 +92,9 @@ add constraint CK_Person_Age check (Age > 0 and Age < 150)
 insert into Person (Id, Name, Email, GenderId, Age)
 values (9, 'Test', 'Test', 2, 160)
 
-
---?
+-- veeru 8 id-ga kustutamine
 select * from Person
-go
+go	
 delete from Person where Id = 8
 go
 select * from Person
@@ -103,7 +103,7 @@ select * from Person
 alter table Person
 add City nvarchar(25)
 
--- ?
+-- linna otsing 
 select * from Person where City = 'Gotham'
 
 
@@ -111,39 +111,39 @@ select * from Person where City = 'Gotham'
 select * from Person where City <> 'Gotham'
 select * from Person where City != 'Gotham'
 
--- ?
-select *from Person where Age = 100 or 
+-- paring mis otsib inimesi kelle vanus on 100, 50 voi 20
+select * from Person where Age = 100 or 
 Age = 50 or Age = 20
 select * from Person where Age in (100, 50, 20)
 
 
---- ?
+--- otsib linna mis algab 'n' tahega ja emaili kus on '@' mark
 select * from Person where City like 'n%'
 select * from Person where Email like '%@%'
 
--- ?
+-- otsib emaili kus ei ole '@' marki
 select * from Person where Email not like '%@%'
 
 --- näitab, kelle on emailis ees ja peale @-märki
 -- ainult üks täht
 select * from Person where Email like '_@_.com'
 
---?
+-- ?????????????????????????????
 select * from Person where Name like '[^WAS]%'
---- ?
+--- otsib inimesi kelle linn on Gotham voi New York ja vanem voi 40 aastane
 select * from Person where (City = 'Gotham' or City = 'New York')
 and Age >= 40
 
 ---võtab kolm esimest rida
 select top 3 * from Person
 
---- ?
+--- votab kolm esimest rida veerust Name 
 select * from Person
 select top 3 Age, Name from Person
 
---- ?
+-- ?????????????????????????
 select top 50 percent * from Person
---?
+-- sorteerib inimesi vanuse jargi
 select * from Person order by cast(Age as int)
 select * from Person order by Age
 
@@ -177,7 +177,7 @@ Salary nvarchar(50),
 DepartmentId int
 )
 
---?
+-- andmete lisamine tabelisse Department
 insert into Department (Id, DepartmentName, Location, DepartmentHead)
 values (1, 'IT', 'London', 'Rick')
 insert into Department (Id, DepartmentName, Location, DepartmentHead)
@@ -230,7 +230,7 @@ add DepartmentId
 int null
 
 
---?
+-- tabelisse Employees veeru lisamine
 alter table Employees
 add MiddleName nvarchar(30)
 
