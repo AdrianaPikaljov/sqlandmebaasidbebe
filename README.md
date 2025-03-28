@@ -1,3 +1,5 @@
 # sqlandmebaasidbebe
 SQL serveriga seotud SQL laused
 ![pilt](https://github.com/user-attachments/assets/788d4e78-e7a9-4d77-88cc-ff06f763af5d)
+
+![pilt](https://github.com/user-attachments/assets/997b9520-7309-40c6-9e24-954a4aba5ec0)
