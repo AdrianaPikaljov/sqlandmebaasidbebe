@@ -7,3 +7,6 @@ SQL serveriga seotud SQL laused
 ![pilt](https://github.com/user-attachments/assets/5b4bca1d-8d2c-42c4-87a4-79ffcb8ef0e7)
 
 ![pilt](https://github.com/user-attachments/assets/1cf10c64-74af-48ba-b567-6c0e30d02fe8)
+
+![pilt](https://github.com/user-attachments/assets/277e1787-af88-44d5-a641-12bb8516fc0f)
+
