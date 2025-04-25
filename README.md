@@ -3,18 +3,3 @@ SQL serveriga seotud SQL laused
 
 
 
-![pilt](https://github.com/user-attachments/assets/277e1787-af88-44d5-a641-12bb8516fc0f)
-
-![pilt](https://github.com/user-attachments/assets/9b754955-a71e-4884-945b-c455312f42e3)
-
-![pilt](https://github.com/user-attachments/assets/9a14ad3d-6aac-4da6-9f43-0bd90947aebc) 
-sp_helptext with encryption
-
-
-![pilt](https://github.com/user-attachments/assets/6f7c30c0-6040-44a5-a047-d922a015c426)
-
-![pilt](https://github.com/user-attachments/assets/a84f6a5f-4ee1-4c9a-bbf0-db932609e0ba)
-
-![pilt](https://github.com/user-attachments/assets/b731259d-7e40-4d37-9ed7-079b5769b8ef)
-
-
