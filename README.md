@@ -14,3 +14,6 @@ SQL serveriga seotud SQL laused
 
 ![pilt](https://github.com/user-attachments/assets/9a14ad3d-6aac-4da6-9f43-0bd90947aebc) 
 sp_helptext with encryption
+
+
+![pilt](https://github.com/user-attachments/assets/6f7c30c0-6040-44a5-a047-d922a015c426)
