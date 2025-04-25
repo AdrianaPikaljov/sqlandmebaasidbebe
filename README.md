@@ -17,3 +17,6 @@ sp_helptext with encryption
 
 
 ![pilt](https://github.com/user-attachments/assets/6f7c30c0-6040-44a5-a047-d922a015c426)
+
+![pilt](https://github.com/user-attachments/assets/a84f6a5f-4ee1-4c9a-bbf0-db932609e0ba)
+
