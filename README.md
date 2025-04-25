@@ -20,3 +20,6 @@ sp_helptext with encryption
 
 ![pilt](https://github.com/user-attachments/assets/a84f6a5f-4ee1-4c9a-bbf0-db932609e0ba)
 
+![pilt](https://github.com/user-attachments/assets/b731259d-7e40-4d37-9ed7-079b5769b8ef)
+
+
