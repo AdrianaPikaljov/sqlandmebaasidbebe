@@ -10,3 +10,5 @@ SQL serveriga seotud SQL laused
 
 ![pilt](https://github.com/user-attachments/assets/277e1787-af88-44d5-a641-12bb8516fc0f)
 
+![pilt](https://github.com/user-attachments/assets/9b754955-a71e-4884-945b-c455312f42e3)
+
