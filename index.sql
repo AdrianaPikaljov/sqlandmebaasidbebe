@@ -158,27 +158,28 @@ sp_depends spGetEmployeeCountByGender
 sp_depends Employees
 
 
---
+--protseduur mis ei toota korrektselt. tulemuses annab uks ja sama nimi
+-- peame lisama where ...
 create proc spGetnameById
 @Id int,
 @Name nvarchar(20) output
 as begin
-	select @Id = Id, @Name = FirstName from Employees
+	select @Id = Id, @Name = Name from Employees
 end
 
 select * from Employees
 declare @FirstName nvarchar(50)
-execute spGetnameById 2, @FirstName output
+execute spGetnameById 5, @FirstName output
 print 'Name of the employee = ' + @FirstName
 
--- mis id all on keegi nime j'rgi
+-- naitab nimi sisestatud id jargi
 create proc spGetNameById1
 @Id int,
 @FirstName nvarchar(50) output
 as begin
-	select @FirstName = FirstName from Employees where Id = @Id
+	select @FirstName = Name from Employees where Id = @Id
 end
-
+--protseduuri kutse
 declare @FirstName nvarchar(50)
 execute spGetNameById1 4, @FirstName output
 print 'Name of the employee = ' + @FirstName
@@ -189,7 +190,7 @@ sp_help spGetNameById1
 create proc spGetNameById2
 @Id int
 as begin
-	return (select FirstName from Employees where Id = @Id)
+	return (select Name from Employees where Id = @Id)
 end
 
 -- tuleb veateade kuna kutsusime välja int-i, aga Tom on string
@@ -203,6 +204,8 @@ print 'Name of the employee = ' + @FirstName
 select ascii('a')
 -- kuvab A-tähe
 select char (66)
+select char (97)
+
 
 --prindime kogu tähestiku välja
 declare @Start int
@@ -217,7 +220,7 @@ end
 select ltrim('        Hello')
 
 -- tühikute eemaldamine veerust
-select ltrim(FirstName) as FirstName, MiddleName, LastName from Employees
+select ltrim(Name) as FirstName from Employees
 
 select * from Employees
 
@@ -227,15 +230,15 @@ select rtrim('      Hello          ')
 --keerab kooloni sees olevad andmed vastupidiseks
 -- vastavalt upper ja lower-ga saan muuta märkide suurust
 -- reverse funktsioon pöörab kõik ümber
-select REVERSE(UPPER(ltrim(FirstName))) as FirstName, MiddleName, lower(LastName),
-rtrim(ltrim(FirstName)) + ' ' + MiddleName + ' ' + LastName as FullName
+select REVERSE(UPPER(ltrim(Name))) as FirstName, lower(Gender),
+rtrim(ltrim(Name)) + ' ' + Gender as Fullinfo
 from Employees
 
 --näeb, mitu tähte on sõnal ja loeb tühikud sisse
-select FirstName, len(FirstName) as [Total Characters] from Employees
+select Name, len(Name) as [Total Characters] from Employees
 
 --- näeb, mitu tähte on sõnal ja ei loe tyhikuid sisse
-select FirstName, len(ltrim(FirstName)) as [Total Characters] from Employees
+select Name, len(ltrim(Name)) as [Total Characters] from Employees
 
 -- left, right ja substring
 --- vasakult poolt neli esimest tähte
@@ -277,13 +280,13 @@ update Employees set Email = 'Russel@bbb.com' where Id = 10
 select * from Employees
 
 --- lisame *-märgi alates teatud kohast
-select FirstName, LastName,
+select Name,
 	substring(Email, 1, 2) + REPLICATE('*', 5) + --peale teist tähemärki paneb viis tärni
 	SUBSTRING(Email, CHARINDEX('@', Email), len(Email) - charindex('@', Email)+1) as Email
 from Employees
 
 --- kolm korda näitab stringis olevat väärtust
-select replicate(FirstName, 3)
+select replicate(Name, 3)
 from Employees
 
 select replicate('asd', 3)
@@ -293,6 +296,5 @@ select space(5)
 
 --Employees tabelist teed päringu kahe nime osas (FirstName ja LastName)
 --kahe nime vahel on 25 tühikut
-select FirstName + space(25) + LastName as FullName
+select Name + space(25) + Gender as Fullinfo
 from Employees
-
